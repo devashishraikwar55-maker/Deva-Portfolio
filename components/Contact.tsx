@@ -4,7 +4,7 @@ import { Mail, Phone, Linkedin, Twitter } from 'lucide-react';
 
 export const Contact: React.FC = () => {
   return (
-    <section id="contact" className="py-24 relative bg-[#FAFAFA] border-t border-gray-200 scroll-mt-32">
+    <section id="contact" className="py-24 relative bg-beige-100 border-t border-beige-200 scroll-mt-32">
       <div className="max-w-7xl mx-auto px-6 text-center">
         
         <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">Ready to collaborate?</h2>
@@ -22,14 +22,14 @@ export const Contact: React.FC = () => {
             </a>
              <a 
                 href={`tel:${PROFILE_DATA.personal_information.phone}`}
-                className="flex items-center gap-3 px-8 py-4 bg-white text-gray-900 rounded-full border border-gray-200 hover:bg-gray-50 transition-all font-medium text-lg shadow-sm hover:shadow-md"
+                className="flex items-center gap-3 px-8 py-4 bg-white text-gray-900 rounded-full border border-beige-200 hover:bg-beige-50 transition-all font-medium text-lg shadow-sm hover:shadow-md"
             >
                 <Phone size={20} />
                 {PROFILE_DATA.personal_information.phone}
             </a>
         </div>
 
-        <div className="pt-12 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+        <div className="pt-12 border-t border-beige-200 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
             <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6">
                 <p>&copy; {new Date().getFullYear()} {PROFILE_DATA.personal_information.full_name}. All rights reserved.</p>
                 <span className="hidden md:block text-gray-300">|</span>

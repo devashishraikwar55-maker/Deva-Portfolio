@@ -38,7 +38,7 @@ function App() {
           <GenerativeAIPage onBack={() => setCurrentView('home')} />
         </div>
       ) : (
-        <div className="min-h-screen bg-white text-gray-900 selection:bg-orange-200 selection:text-orange-900 overflow-x-hidden">
+        <div className="min-h-screen bg-beige-50 text-gray-900 selection:bg-orange-200 selection:text-orange-900 overflow-x-hidden">
           <GridBackground />
           <Navbar onNavigateToGenAI={() => setCurrentView('generative-ai')} />
           

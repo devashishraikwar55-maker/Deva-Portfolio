@@ -27,7 +27,7 @@ const useOnScreen = (options: IntersectionObserverInit) => {
 
 export const Projects: React.FC = () => {
   return (
-    <section id="projects" className="py-24 relative bg-white scroll-mt-32">
+    <section id="projects" className="py-24 relative bg-beige-50 scroll-mt-32">
       <div className="max-w-7xl mx-auto px-6">
          <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-4">
             <div>
@@ -56,14 +56,14 @@ export const Projects: React.FC = () => {
                     >
                         {/* Image Section */}
                         <div className="w-full md:w-1/2">
-                            <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border border-gray-100 group aspect-[4/3] bg-gray-50 transition-transform duration-500 hover:scale-[1.02] cursor-pointer">
+                            <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border border-beige-200 group aspect-[4/3] bg-beige-100 transition-transform duration-500 hover:scale-[1.02] cursor-pointer">
                                 {project.image_url ? (
                                 <div 
                                     className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-105"
                                     style={{ backgroundImage: `url('${project.image_url}')` }}
                                 />
                                 ) : (
-                                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-200">
+                                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-beige-50 to-beige-200">
                                     <Zap className="w-20 h-20 text-gray-300" />
                                 </div>
                                 )}
@@ -91,7 +91,7 @@ export const Projects: React.FC = () => {
                                 <h4 className="text-xs font-semibold text-gray-400 mb-4 uppercase tracking-widest">Focus Areas</h4>
                                 <div className="flex flex-wrap gap-2">
                                     {project.focus_areas.map(area => (
-                                        <span key={area} className="px-4 py-2 rounded-full bg-gray-50 text-gray-700 text-sm font-medium border border-gray-200 hover:bg-gray-100 transition-colors cursor-default">
+                                        <span key={area} className="px-4 py-2 rounded-full bg-white text-gray-700 text-sm font-medium border border-beige-200 hover:bg-beige-100 transition-colors cursor-default">
                                             {area}
                                         </span>
                                     ))}

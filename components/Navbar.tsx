@@ -55,7 +55,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigateToGenAI }) => {
     >
       <div className={`
         relative flex items-center justify-between px-8 py-3 rounded-full transition-all duration-300 w-full max-w-7xl pointer-events-auto
-        ${isScrolled ? 'bg-white/80 backdrop-blur-md shadow-sm border border-white/40 mt-2' : 'bg-transparent'}
+        ${isScrolled ? 'bg-beige-50/80 backdrop-blur-md shadow-sm border border-beige-200/40 mt-2' : 'bg-transparent'}
       `}>
         
         <div className="font-bold text-xl tracking-tight text-gray-900 flex items-center gap-2">
@@ -98,17 +98,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigateToGenAI }) => {
             <div className="absolute top-full left-0 w-full h-2 bg-transparent"></div>
 
             {/* Dropdown Menu */}
-            <div className="absolute top-[calc(100%+0.5rem)] left-1/2 -translate-x-1/2 w-48 bg-white/95 backdrop-blur-xl rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 overflow-hidden p-1">
+            <div className="absolute top-[calc(100%+0.5rem)] left-1/2 -translate-x-1/2 w-48 bg-beige-50/95 backdrop-blur-xl rounded-xl shadow-xl border border-beige-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 overflow-hidden p-1">
                 <a 
                   href="#projects"
                   onClick={(e) => handleNavClick(e, '#projects')}
-                  className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-100 rounded-lg transition-colors text-center"
+                  className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-beige-100 rounded-lg transition-colors text-center"
                 >
                   Web Dev
                 </a>
                 <button 
                   onClick={handleGenAIClick}
-                  className="block w-full px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-100 rounded-lg transition-colors text-center"
+                  className="block w-full px-4 py-2.5 text-sm text-gray-700 hover:bg-beige-100 rounded-lg transition-colors text-center"
                 >
                   Generative AI
                 </button>
@@ -145,7 +145,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigateToGenAI }) => {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="absolute top-24 left-4 right-4 bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col gap-4 animate-fade-in-up z-50 pointer-events-auto">
+        <div className="absolute top-24 left-4 right-4 bg-beige-50/95 backdrop-blur-xl rounded-2xl shadow-xl border border-beige-100 p-6 flex flex-col gap-4 animate-fade-in-up z-50 pointer-events-auto">
            <a 
               href="#about"
               className="text-lg font-medium text-gray-700 hover:text-gray-900"
@@ -162,7 +162,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigateToGenAI }) => {
             </a>
             
             {/* Mobile Portfolio Sub-menu */}
-            <div className="flex flex-col gap-3 border-l-2 border-gray-100 pl-4 py-2">
+            <div className="flex flex-col gap-3 border-l-2 border-beige-200 pl-4 py-2">
                 <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Portfolio</span>
                 <a 
                   href="#projects"

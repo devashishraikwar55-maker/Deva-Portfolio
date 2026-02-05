@@ -45,7 +45,7 @@ const SkillCard: React.FC<{
     }}
   >
     {/* Inner card for hover effects */}
-    <div className="group p-8 rounded-[2rem] bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full cursor-default">
+    <div className="group p-8 rounded-[2rem] bg-white border border-beige-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full cursor-default">
       <div className={`mb-6 p-3 rounded-2xl w-fit ${colorClass} transition-transform duration-300 group-hover:scale-110`}>
           {icon}
       </div>
@@ -54,7 +54,7 @@ const SkillCard: React.FC<{
         {items.map((item) => (
           <span 
             key={item} 
-            className="px-3 py-1.5 text-xs font-semibold text-gray-600 bg-gray-50 rounded-lg border border-gray-100 group-hover:bg-gray-100 transition-colors"
+            className="px-3 py-1.5 text-xs font-semibold text-gray-600 bg-gray-50 rounded-lg border border-beige-200 group-hover:bg-gray-100 transition-colors"
           >
             {item}
           </span>
@@ -69,7 +69,7 @@ export const Skills: React.FC = () => {
   const [toolsRef, toolsVisible] = useOnScreen({ threshold: 0.2 });
 
   return (
-    <section id="skills" className="py-24 relative bg-[#FAFAFA] scroll-mt-32">
+    <section id="skills" className="py-24 relative bg-beige-100 scroll-mt-32">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
             <h3 className="text-sm font-semibold text-blue-600 tracking-wider uppercase mb-2">Expertise</h3>

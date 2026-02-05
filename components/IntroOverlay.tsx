@@ -21,7 +21,7 @@ export const IntroOverlay: React.FC<Props> = ({ onComplete }) => {
 
   return (
     <div 
-      className={`fixed inset-0 z-[100] bg-white flex flex-col items-center justify-center cursor-pointer transition-transform duration-1000 cubic-bezier(0.77, 0, 0.175, 1) ${
+      className={`fixed inset-0 z-[100] bg-beige-50 flex flex-col items-center justify-center cursor-pointer transition-transform duration-1000 cubic-bezier(0.77, 0, 0.175, 1) ${
         isExiting ? '-translate-y-full' : 'translate-y-0'
       }`}
       onClick={handleClick}

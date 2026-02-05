@@ -3,7 +3,7 @@ import { PROFILE_DATA } from '../constants';
 
 export const About: React.FC = () => {
   return (
-    <section id="about" className="py-24 relative bg-white scroll-mt-32">
+    <section id="about" className="py-24 relative bg-beige-50 scroll-mt-32">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-12 gap-12 items-start">
           
@@ -23,7 +23,7 @@ export const About: React.FC = () => {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6">
                 {/* Certifications - First Item (Left Side) & Bolder Style */}
-                <div className="p-8 rounded-3xl bg-white border-2 border-gray-900 shadow-xl relative overflow-hidden">
+                <div className="p-8 rounded-3xl bg-white border-2 border-beige-200 shadow-xl relative overflow-hidden">
                     <h4 className="text-xl font-bold text-gray-900 mb-4">Certifications</h4>
                     <ul className="space-y-3">
                         {PROFILE_DATA.certifications.map((c, index) => (
@@ -44,7 +44,7 @@ export const About: React.FC = () => {
 
                 {/* Education - Second Item (Right Side) */}
                 {PROFILE_DATA.education.highest_qualification && (
-                    <div className="p-6 rounded-3xl bg-gray-50 border border-gray-100 flex flex-col justify-center">
+                    <div className="p-6 rounded-3xl bg-beige-100 border border-beige-200 flex flex-col justify-center">
                         <h4 className="text-gray-900 font-semibold mb-2">Education</h4>
                         <p className="text-lg text-gray-800 font-medium">{PROFILE_DATA.education.highest_qualification}</p>
                         <p className="text-sm text-gray-500 mt-1">{PROFILE_DATA.education.details}</p>
