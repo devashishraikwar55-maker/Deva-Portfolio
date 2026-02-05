@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 
-export const Navbar: React.FC = () => {
+interface NavbarProps {
+  onNavigateToGenAI?: () => void;
+}
+
+export const Navbar: React.FC<NavbarProps> = ({ onNavigateToGenAI }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -16,7 +20,7 @@ export const Navbar: React.FC = () => {
   const navLinks = [
     { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
+    // Projects is handled manually
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -38,6 +42,13 @@ export const Navbar: React.FC = () => {
     }
   };
 
+  const handleGenAIClick = () => {
+    setMobileMenuOpen(false);
+    if (onNavigateToGenAI) {
+      onNavigateToGenAI();
+    }
+  };
+
   return (
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 flex justify-center pt-6 px-4 pointer-events-none`}
@@ -55,16 +66,63 @@ export const Navbar: React.FC = () => {
 
         {/* Desktop Nav - Centered */}
         <div className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
-          {navLinks.map((link) => (
+          
+          <a 
+            href="#about"
+            onClick={(e) => handleNavClick(e, '#about')}
+            className={`text-sm font-medium transition-colors cursor-pointer ${isScrolled ? 'text-gray-600 hover:text-gray-900' : 'text-gray-800/80 hover:text-gray-900'}`}
+          >
+            About
+          </a>
+
+          <a 
+            href="#skills"
+            onClick={(e) => handleNavClick(e, '#skills')}
+            className={`text-sm font-medium transition-colors cursor-pointer ${isScrolled ? 'text-gray-600 hover:text-gray-900' : 'text-gray-800/80 hover:text-gray-900'}`}
+          >
+            Skills
+          </a>
+
+          {/* PORTFOLIO DROPDOWN */}
+          <div className="relative group">
             <a 
-              key={link.name} 
-              href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
-              className={`text-sm font-medium transition-colors cursor-pointer ${isScrolled ? 'text-gray-600 hover:text-gray-900' : 'text-gray-800/80 hover:text-gray-900'}`}
+              href="#projects"
+              onClick={(e) => handleNavClick(e, '#projects')}
+              className={`flex items-center gap-1 text-sm font-medium transition-colors cursor-pointer py-2 ${isScrolled ? 'text-gray-600 hover:text-gray-900' : 'text-gray-800/80 hover:text-gray-900'}`}
             >
-              {link.name}
+              Portfolio
+              <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-200" />
             </a>
-          ))}
+            
+            {/* Invisible bridge to prevent hover loss */}
+            <div className="absolute top-full left-0 w-full h-2 bg-transparent"></div>
+
+            {/* Dropdown Menu */}
+            <div className="absolute top-[calc(100%+0.5rem)] left-1/2 -translate-x-1/2 w-48 bg-white/95 backdrop-blur-xl rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 overflow-hidden p-1">
+                <a 
+                  href="#projects"
+                  onClick={(e) => handleNavClick(e, '#projects')}
+                  className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-100 rounded-lg transition-colors text-center"
+                >
+                  Web Dev
+                </a>
+                <button 
+                  onClick={handleGenAIClick}
+                  className="block w-full px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-100 rounded-lg transition-colors text-center"
+                >
+                  Generative AI
+                </button>
+            </div>
+          </div>
+
+          <a 
+            href="#contact"
+            onClick={(e) => handleNavClick(e, '#contact')}
+            className={`text-sm font-medium transition-colors cursor-pointer ${isScrolled ? 'text-gray-600 hover:text-gray-900' : 'text-gray-800/80 hover:text-gray-900'}`}
+          >
+            Contact
+          </a>
+
         </div>
 
         <div className="hidden md:block">
@@ -88,16 +146,47 @@ export const Navbar: React.FC = () => {
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
         <div className="absolute top-24 left-4 right-4 bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col gap-4 animate-fade-in-up z-50 pointer-events-auto">
-           {navLinks.map((link) => (
-            <a 
-              key={link.name} 
-              href={link.href}
+           <a 
+              href="#about"
               className="text-lg font-medium text-gray-700 hover:text-gray-900"
-              onClick={(e) => handleNavClick(e, link.href)}
+              onClick={(e) => handleNavClick(e, '#about')}
             >
-              {link.name}
+              About
             </a>
-          ))}
+            <a 
+              href="#skills"
+              className="text-lg font-medium text-gray-700 hover:text-gray-900"
+              onClick={(e) => handleNavClick(e, '#skills')}
+            >
+              Skills
+            </a>
+            
+            {/* Mobile Portfolio Sub-menu */}
+            <div className="flex flex-col gap-3 border-l-2 border-gray-100 pl-4 py-2">
+                <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Portfolio</span>
+                <a 
+                  href="#projects"
+                  className="text-lg font-medium text-gray-700 hover:text-gray-900"
+                  onClick={(e) => handleNavClick(e, '#projects')}
+                >
+                  Web Dev
+                </a>
+                <button 
+                  className="text-lg font-medium text-gray-700 hover:text-gray-900 text-left"
+                  onClick={handleGenAIClick}
+                >
+                  Generative AI
+                </button>
+            </div>
+
+            <a 
+              href="#contact"
+              className="text-lg font-medium text-gray-700 hover:text-gray-900"
+              onClick={(e) => handleNavClick(e, '#contact')}
+            >
+              Contact
+            </a>
+
           <a 
             href="#contact"
             className="mt-2 text-center px-5 py-3 bg-gray-900 text-white text-sm font-medium rounded-xl"

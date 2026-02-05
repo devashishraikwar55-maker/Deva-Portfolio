@@ -40,7 +40,7 @@ function App() {
       ) : (
         <div className="min-h-screen bg-white text-gray-900 selection:bg-orange-200 selection:text-orange-900 overflow-x-hidden">
           <GridBackground />
-          <Navbar />
+          <Navbar onNavigateToGenAI={() => setCurrentView('generative-ai')} />
           
           <main className="relative z-10">
             <Hero />

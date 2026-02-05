@@ -30,7 +30,13 @@ export const Contact: React.FC = () => {
         </div>
 
         <div className="pt-12 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
-            <p>&copy; {new Date().getFullYear()} {PROFILE_DATA.personal_information.full_name}. All rights reserved.</p>
+            <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6">
+                <p>&copy; {new Date().getFullYear()} {PROFILE_DATA.personal_information.full_name}. All rights reserved.</p>
+                <span className="hidden md:block text-gray-300">|</span>
+                <a href={`mailto:${PROFILE_DATA.personal_information.email}`} className="hover:text-gray-900 transition-colors">
+                    {PROFILE_DATA.personal_information.email}
+                </a>
+            </div>
             <div className="flex gap-6 mt-4 md:mt-0">
                 {/* Social Placeholders */}
                 <a href="#" className="hover:text-gray-900 transition-colors"><Linkedin size={20} /></a>

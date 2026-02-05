@@ -15,13 +15,18 @@ export const Hero: React.FC = () => {
           
           {/* Badge - Centered & Smaller */}
           <div className="flex justify-center">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-100/50 border border-orange-200 backdrop-blur-sm text-orange-900 text-sm font-bold mb-2">
+            <a 
+              href={`https://mail.google.com/mail/?view=cm&fs=1&to=${PROFILE_DATA.personal_information.email}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-100/50 border border-orange-200 backdrop-blur-sm text-orange-900 text-sm font-bold mb-2 cursor-pointer hover:bg-orange-100 transition-colors"
+            >
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
               </span>
-              Available for new projects
-            </div>
+              {PROFILE_DATA.personal_information.email}
+            </a>
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 leading-[1.1]">
