@@ -18,13 +18,6 @@ function App() {
   const [showIntro, setShowIntro] = useState(true);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-  // Initialize theme based on preference or system
-  useEffect(() => {
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setIsDarkMode(true);
-    }
-  }, []);
-
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
   };

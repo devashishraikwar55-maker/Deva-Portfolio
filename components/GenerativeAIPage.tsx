@@ -5,7 +5,7 @@ interface Props {
   onBack: () => void;
 }
 
-// Updated with the requested video
+// Updated with the requested videos
 const VIDEO_ITEMS = [
   {
     id: 'portfolio-main',
@@ -14,7 +14,14 @@ const VIDEO_ITEMS = [
     thumbnail: 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=800&auto=format&fit=crop',
     link: 'https://drive.google.com/file/d/1HEDYAv_60fSIhAMGYeS2iSrYiAvC5K2Y/view?usp=sharing'
   },
-  ...Array(6).fill(null).map((_, i) => ({
+  {
+    id: 'screenpal-demo',
+    title: 'Project Walkthrough & Demo',
+    duration: 'Watch', 
+    thumbnail: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop',
+    link: 'https://go.screenpal.com/watch/cOnh20n379y'
+  },
+  ...Array(5).fill(null).map((_, i) => ({
     id: i,
     title: `Cinematic Sequence ${i + 1}`,
     duration: '0:15',

@@ -1,6 +1,6 @@
 import React from 'react';
 import { PROFILE_DATA } from '../constants';
-import { Mail, Phone, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, Linkedin, Twitter, FileText } from 'lucide-react';
 
 export const Contact: React.FC = () => {
   return (
@@ -37,10 +37,23 @@ export const Contact: React.FC = () => {
                     {PROFILE_DATA.personal_information.email}
                 </a>
             </div>
-            <div className="flex gap-6 mt-4 md:mt-0">
-                {/* Social Placeholders */}
-                <a href="#" className="hover:text-gray-900 dark:hover:text-white transition-colors"><Linkedin size={20} /></a>
-                <a href="#" className="hover:text-gray-900 dark:hover:text-white transition-colors"><Twitter size={20} /></a>
+            
+            <div className="flex items-center gap-6 mt-4 md:mt-0">
+                <a 
+                  href="https://ibb.co/2164Wz4w" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-5 py-2 bg-white dark:bg-gray-800 border border-beige-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 text-gray-900 dark:text-white rounded-full text-sm font-medium transition-all hover:-translate-y-0.5 shadow-sm group"
+                >
+                  <FileText size={16} className="text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white transition-colors"/>
+                  Resume
+                </a>
+
+                <div className="flex gap-4">
+                    {/* Social Placeholders */}
+                    <a href="#" className="hover:text-gray-900 dark:hover:text-white transition-colors"><Linkedin size={20} /></a>
+                    <a href="#" className="hover:text-gray-900 dark:hover:text-white transition-colors"><Twitter size={20} /></a>
+                </div>
             </div>
         </div>
 
