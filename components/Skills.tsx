@@ -1,9 +1,9 @@
 import React from 'react';
 import { PROFILE_DATA } from '../constants';
-import { Cpu, Palette, Code, Search } from 'lucide-react';
+import { Cpu, Palette, Code, Search, Zap, Lightbulb, Terminal, Video } from 'lucide-react';
 
 const SkillCard: React.FC<{ title: string; items: string[]; icon: React.ReactNode; colorClass: string }> = ({ title, items, icon, colorClass }) => (
-  <div className="group p-8 rounded-[2rem] bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+  <div className="group p-8 rounded-[2rem] bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
     <div className={`mb-6 p-3 rounded-2xl w-fit ${colorClass}`}>
         {icon}
     </div>
@@ -31,32 +31,56 @@ export const Skills: React.FC = () => {
             <p className="text-gray-500 text-lg">Leveraging state-of-the-art AI models and development environments.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <SkillCard 
-                title="Technical Skills" 
-                items={PROFILE_DATA.skills.technical_skills}
-                icon={<Cpu size={24} className="text-blue-600" />}
-                colorClass="bg-blue-50"
-            />
-            <SkillCard 
-                title="AI Image & Video" 
-                items={[...PROFILE_DATA.tools_and_platforms.ai_image_tools, ...PROFILE_DATA.tools_and_platforms.ai_video_tools]}
-                icon={<Palette size={24} className="text-purple-600" />}
-                colorClass="bg-purple-50"
-            />
-            <SkillCard 
-                title="Dev & Prototype" 
-                items={PROFILE_DATA.tools_and_platforms.ai_assisted_development_tools}
-                icon={<Code size={24} className="text-orange-600" />}
-                colorClass="bg-orange-50"
-            />
-             <SkillCard 
-                title="Research & Analysis" 
-                items={[...PROFILE_DATA.tools_and_platforms.research_tools, ...PROFILE_DATA.skills.soft_skills]}
-                icon={<Search size={24} className="text-green-600" />}
-                colorClass="bg-green-50"
-            />
+        {/* Core Skills */}
+        <div className="mb-12">
+            <h3 className="text-xl font-bold text-gray-800 mb-6 pl-2 border-l-4 border-blue-500">Core Competencies</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <SkillCard 
+                    title="Generative AI" 
+                    items={PROFILE_DATA.skills.generative_ai}
+                    icon={<Zap size={24} className="text-amber-600" />}
+                    colorClass="bg-amber-50"
+                />
+                <SkillCard 
+                    title="Product & Development" 
+                    items={PROFILE_DATA.skills.product_and_development}
+                    icon={<Code size={24} className="text-blue-600" />}
+                    colorClass="bg-blue-50"
+                />
+                <SkillCard 
+                    title="Creative & Problem Solving" 
+                    items={PROFILE_DATA.skills.creative_and_problem_solving}
+                    icon={<Lightbulb size={24} className="text-purple-600" />}
+                    colorClass="bg-purple-50"
+                />
+            </div>
         </div>
+
+        {/* Tools */}
+        <div>
+            <h3 className="text-xl font-bold text-gray-800 mb-6 pl-2 border-l-4 border-green-500">Tools & Platforms</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <SkillCard 
+                    title="AI Image & Video" 
+                    items={PROFILE_DATA.tools_and_platforms.ai_image_and_video}
+                    icon={<Video size={24} className="text-pink-600" />}
+                    colorClass="bg-pink-50"
+                />
+                <SkillCard 
+                    title="Dev & Prototyping" 
+                    items={PROFILE_DATA.tools_and_platforms.ai_development_and_prototyping}
+                    icon={<Terminal size={24} className="text-slate-600" />}
+                    colorClass="bg-slate-100"
+                />
+                <SkillCard 
+                    title="Research & Intelligence" 
+                    items={PROFILE_DATA.tools_and_platforms.research_and_intelligence}
+                    icon={<Search size={24} className="text-emerald-600" />}
+                    colorClass="bg-emerald-50"
+                />
+            </div>
+        </div>
+
       </div>
     </section>
   );

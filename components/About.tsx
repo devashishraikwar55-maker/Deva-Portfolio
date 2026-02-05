@@ -10,10 +10,7 @@ export const About: React.FC = () => {
           <div className="md:col-span-4">
             <h3 className="text-sm font-semibold text-orange-600 tracking-wider uppercase mb-3">About Me</h3>
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Bridging Creativity & Artificial Intelligence</h2>
-             <div className="p-6 bg-orange-50 rounded-3xl border border-orange-100">
-                <div className="text-4xl font-bold text-orange-900 mb-1">2+</div>
-                <div className="text-sm text-orange-700">Years Experience (Implied)</div>
-             </div>
+             {/* Experience section removed */}
           </div>
 
           <div className="md:col-span-8 space-y-6">
@@ -25,24 +22,34 @@ export const About: React.FC = () => {
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6">
-                {PROFILE_DATA.education.highest_qualification && (
-                    <div className="p-6 rounded-3xl bg-gray-50 border border-gray-100">
-                        <h4 className="text-gray-900 font-semibold mb-1">Education</h4>
-                        <p className="text-sm text-gray-600 font-medium">{PROFILE_DATA.education.highest_qualification}</p>
-                        <p className="text-xs text-gray-500 mt-1">{PROFILE_DATA.education.details}</p>
-                    </div>
-                )}
-                <div className="p-6 rounded-3xl bg-gray-50 border border-gray-100">
-                    <h4 className="text-gray-900 font-semibold mb-2">Certifications</h4>
-                    <ul className="space-y-1">
-                        {PROFILE_DATA.certifications.map(c => (
-                            <li key={c} className="text-sm text-gray-600 flex items-center gap-2">
-                                <span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
-                                {c}
+                {/* Certifications - First Item (Left Side) & Bolder Style */}
+                <div className="p-8 rounded-3xl bg-white border-2 border-gray-900 shadow-xl relative overflow-hidden">
+                    <h4 className="text-xl font-bold text-gray-900 mb-4">Certifications</h4>
+                    <ul className="space-y-3">
+                        {PROFILE_DATA.certifications.map((c, index) => (
+                            <li key={index} className="text-base font-semibold text-gray-800 flex items-center gap-3">
+                                <span className="w-2 h-2 bg-orange-500 rounded-full flex-shrink-0"></span>
+                                <a 
+                                  href={c.link} 
+                                  target="_blank" 
+                                  rel="noopener noreferrer" 
+                                  className="hover:text-orange-600 hover:underline transition-colors"
+                                >
+                                  {c.name}
+                                </a>
                             </li>
                         ))}
                     </ul>
                 </div>
+
+                {/* Education - Second Item (Right Side) */}
+                {PROFILE_DATA.education.highest_qualification && (
+                    <div className="p-6 rounded-3xl bg-gray-50 border border-gray-100 flex flex-col justify-center">
+                        <h4 className="text-gray-900 font-semibold mb-2">Education</h4>
+                        <p className="text-lg text-gray-800 font-medium">{PROFILE_DATA.education.highest_qualification}</p>
+                        <p className="text-sm text-gray-500 mt-1">{PROFILE_DATA.education.details}</p>
+                    </div>
+                )}
             </div>
           </div>
 

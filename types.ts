@@ -3,6 +3,8 @@ export interface Project {
   project_type: string;
   description: string;
   focus_areas: string[];
+  image_url?: string;
+  link?: string;
 }
 
 export interface ProfileData {
@@ -22,19 +24,22 @@ export interface ProfileData {
     portfolio_about_me: string;
   };
   skills: {
-    technical_skills: string[];
-    soft_skills: string[];
+    generative_ai: string[];
+    product_and_development: string[];
+    creative_and_problem_solving: string[];
   };
   tools_and_platforms: {
-    ai_image_tools: string[];
-    ai_video_tools: string[];
-    ai_assisted_development_tools: string[];
-    research_tools: string[];
+    ai_image_and_video: string[];
+    ai_development_and_prototyping: string[];
+    research_and_intelligence: string[];
   };
   projects: Project[];
   education: {
     highest_qualification: string;
     details: string;
   };
-  certifications: string[];
+  certifications: {
+    name: string;
+    link: string;
+  }[];
 }

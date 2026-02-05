@@ -22,14 +22,23 @@ export const Projects: React.FC = () => {
                     key={index} 
                     className="group relative rounded-[2.5rem] overflow-hidden bg-white border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col h-full"
                 >
-                    {/* Abstract Header Image Placeholder */}
+                    {/* Abstract Header Image Placeholder or Custom Image */}
                     <div className="h-56 w-full bg-gradient-to-r from-gray-50 to-gray-100 relative overflow-hidden group-hover:scale-105 transition-transform duration-700">
-                        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, black 1px, transparent 0)', backgroundSize: '24px 24px' }}></div>
-                        <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-sm text-gray-400 group-hover:text-indigo-500 group-hover:shadow-md transition-all">
-                                <Zap className="w-10 h-10" />
+                        {project.image_url ? (
+                           <div 
+                             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                             style={{ backgroundImage: `url('${project.image_url}')` }}
+                           />
+                        ) : (
+                          <>
+                            <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, black 1px, transparent 0)', backgroundSize: '24px 24px' }}></div>
+                            <div className="absolute inset-0 flex items-center justify-center">
+                                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-sm text-gray-400 group-hover:text-indigo-500 group-hover:shadow-md transition-all">
+                                    <Zap className="w-10 h-10" />
+                                </div>
                             </div>
-                        </div>
+                          </>
+                        )}
                     </div>
                     
                     <div className="p-8 md:p-10 flex-1 flex flex-col">
@@ -54,9 +63,20 @@ export const Projects: React.FC = () => {
                             </div>
                             
                             <div className="pt-6 border-t border-gray-100 flex gap-4">
-                                <button className="text-sm font-semibold text-gray-900 flex items-center gap-2 hover:text-indigo-600 transition-colors">
-                                    View Project <ExternalLink size={16} />
-                                </button>
+                                {project.link ? (
+                                    <a 
+                                      href={project.link}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="text-sm font-semibold text-gray-900 flex items-center gap-2 hover:text-indigo-600 transition-colors cursor-pointer"
+                                    >
+                                        View Project <ExternalLink size={16} />
+                                    </a>
+                                ) : (
+                                    <span className="text-sm font-semibold text-gray-400 flex items-center gap-2 cursor-not-allowed">
+                                        View Project <ExternalLink size={16} />
+                                    </span>
+                                )}
                             </div>
                         </div>
                     </div>

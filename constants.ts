@@ -20,55 +20,60 @@ export const PROFILE_DATA: ProfileData = {
     portfolio_about_me: "I am an AI Generalist with a creative background in animation and hands-on experience in AI image creation, AI video generation, prompt engineering, and AI-assisted development. I enjoy building AI-powered tools, MVPs, and prototypes that turn ideas into usable products. Curious by nature, self-driven, and always learning."
   },
   skills: {
-    technical_skills: [
+    generative_ai: [
       "Prompt engineering",
-      "AI image generation",
-      "AI video creation",
-      "AI-assisted development",
-      "AI-integrated MVP and prototype development",
-      "Basic website design and structure",
-      "AI-based research and analysis"
+      "Image generation",
+      "Video generation",
+      "Deep research",
+      "AI ads",
+      "Thumbnails",
+      "Posters",
+      "Presentations"
     ],
-    soft_skills: [
+    product_and_development: [
+      "Website designing",
+      "Landing pages",
+      "AI integrated MVP",
+      "Rapid prototyping"
+    ],
+    creative_and_problem_solving: [
+      "Visual thinking and design sense",
       "Creative problem solving",
-      "Curious mindset",
-      "Self-driven learner",
-      "Rapid adaptability",
-      "Visual thinking"
+      "Fast learner with high adaptability",
+      "Ability to translate ideas into usable products"
     ]
   },
   tools_and_platforms: {
-    ai_image_tools: [
+    ai_image_and_video: [
       "Nano Banana Pro",
-      "Grok"
+      "Veo 3.1"
     ],
-    ai_video_tools: [
-      "Veo 3.1",
-      "Grok"
-    ],
-    ai_assisted_development_tools: [
+    ai_development_and_prototyping: [
       "Gemini AI Studio",
       "Replit",
       "Bolt",
+      "Lovable.ai",
       "Claude",
       "Base44"
     ],
-    "research_tools": [
+    research_and_intelligence: [
+      "ChatGPT",
       "Gemini",
-      "Perplexity",
-      "ChatGPT"
+      "Perplexity"
     ]
   },
   projects: [
     {
-      project_title: "AI Image-Based Caption & Hashtag Generator",
-      project_type: "AI Tool",
+      project_title: "Auto Caption and Hashtag Generator",
+      project_type: "AI Integrated MVP",
       description: "Developed an AI-based tool that analyzes images and automatically generates relevant social media captions and hashtags to improve content creation speed and engagement.",
       focus_areas: [
         "AI image analysis",
         "Social media automation",
         "Workflow optimization"
-      ]
+      ],
+      image_url: "https://i.ibb.co/c5Jcbyt/Screenshot-2026-02-05-163024.png",
+      link: "https://ai.studio/apps/drive/1MRvDcARL58A0YDUFqGA1BYouj7WzuON_"
     },
     {
       project_title: "Speech-to-Text AI Platform",
@@ -78,7 +83,9 @@ export const PROFILE_DATA: ProfileData = {
         "Speech recognition",
         "User-friendly AI tools",
         "Prototype development"
-      ]
+      ],
+      image_url: "https://i.ibb.co/B5kF30WF/Screenshot-2026-02-05-162854.png",
+      link: "https://speak-to-text-by-sitara.lovable.app/"
     }
   ],
   education: {
@@ -86,8 +93,17 @@ export const PROFILE_DATA: ProfileData = {
     details: "Completed after 12th grade"
   },
   certifications: [
-    "Google AI Essentials",
-    "Google Prompting Essentials",
-    "Vibe Coding Fundamentals"
+    {
+      name: "Google AI Essentials",
+      link: "https://coursera.org/share/4421fb2cbf1cffd4310ce7a613a2ba47"
+    },
+    {
+      name: "Google Prompting Essentials",
+      link: "https://coursera.org/share/f0c0f60e16740aac1686ff69b0ea2483"
+    },
+    {
+      name: "Vibe Coding Fundamentals",
+      link: "https://coursera.org/share/45224312c8a2de3aa401ffbdf11d6ae8"
+    }
   ]
 };
