@@ -4,43 +4,43 @@ import { Mail, Phone, Linkedin, Twitter } from 'lucide-react';
 
 export const Contact: React.FC = () => {
   return (
-    <section id="contact" className="py-24 relative bg-beige-100 border-t border-beige-200 scroll-mt-32">
+    <section id="contact" className="py-24 relative bg-beige-100 dark:bg-gray-900 border-t border-beige-200 dark:border-gray-800 scroll-mt-32 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 text-center">
         
-        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">Ready to collaborate?</h2>
-        <p className="text-xl text-gray-500 mb-12 max-w-2xl mx-auto font-light">
+        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">Ready to collaborate?</h2>
+        <p className="text-xl text-gray-500 dark:text-gray-400 mb-12 max-w-2xl mx-auto font-light">
           I'm currently open to job opportunities and freelance projects. Let's build something intelligent together.
         </p>
 
         <div className="flex flex-col md:flex-row justify-center items-center gap-6 mb-16">
             <a 
                 href={`mailto:${PROFILE_DATA.personal_information.email}`}
-                className="flex items-center gap-3 px-8 py-4 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-all font-medium text-lg shadow-xl hover:-translate-y-1"
+                className="flex items-center gap-3 px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-full hover:bg-gray-800 dark:hover:bg-gray-200 transition-all font-medium text-lg shadow-xl hover:-translate-y-1"
             >
                 <Mail size={20} />
                 Send an Email
             </a>
              <a 
                 href={`tel:${PROFILE_DATA.personal_information.phone}`}
-                className="flex items-center gap-3 px-8 py-4 bg-white text-gray-900 rounded-full border border-beige-200 hover:bg-beige-50 transition-all font-medium text-lg shadow-sm hover:shadow-md"
+                className="flex items-center gap-3 px-8 py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-full border border-beige-200 dark:border-gray-700 hover:bg-beige-50 dark:hover:bg-gray-700 transition-all font-medium text-lg shadow-sm hover:shadow-md"
             >
                 <Phone size={20} />
                 {PROFILE_DATA.personal_information.phone}
             </a>
         </div>
 
-        <div className="pt-12 border-t border-beige-200 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+        <div className="pt-12 border-t border-beige-200 dark:border-gray-800 flex flex-col md:flex-row justify-between items-center text-gray-500 dark:text-gray-400 text-sm">
             <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6">
                 <p>&copy; {new Date().getFullYear()} {PROFILE_DATA.personal_information.full_name}. All rights reserved.</p>
-                <span className="hidden md:block text-gray-300">|</span>
-                <a href={`mailto:${PROFILE_DATA.personal_information.email}`} className="hover:text-gray-900 transition-colors">
+                <span className="hidden md:block text-gray-300 dark:text-gray-700">|</span>
+                <a href={`mailto:${PROFILE_DATA.personal_information.email}`} className="hover:text-gray-900 dark:hover:text-white transition-colors">
                     {PROFILE_DATA.personal_information.email}
                 </a>
             </div>
             <div className="flex gap-6 mt-4 md:mt-0">
                 {/* Social Placeholders */}
-                <a href="#" className="hover:text-gray-900 transition-colors"><Linkedin size={20} /></a>
-                <a href="#" className="hover:text-gray-900 transition-colors"><Twitter size={20} /></a>
+                <a href="#" className="hover:text-gray-900 dark:hover:text-white transition-colors"><Linkedin size={20} /></a>
+                <a href="#" className="hover:text-gray-900 dark:hover:text-white transition-colors"><Twitter size={20} /></a>
             </div>
         </div>
 

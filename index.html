@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
+        darkMode: 'class',
         theme: {
           extend: {
             fontFamily: {
@@ -57,22 +58,21 @@
     </script>
     <style>
       body {
-        background-color: #FDFCF8;
-        color: #111827;
+        @apply bg-beige-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100 transition-colors duration-300;
       }
       /* Soft scrollbar for light theme */
       ::-webkit-scrollbar {
         width: 8px;
       }
       ::-webkit-scrollbar-track {
-        background: #F5F2EB;
+        @apply bg-beige-100 dark:bg-gray-900;
       }
       ::-webkit-scrollbar-thumb {
-        background: #D6D1C5;
+        @apply bg-beige-300 dark:bg-gray-700;
         border-radius: 4px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #9ca3af;
+        @apply bg-gray-400 dark:bg-gray-600;
       }
     </style>
   <script type="importmap">

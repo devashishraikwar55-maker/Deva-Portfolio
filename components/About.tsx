@@ -3,37 +3,36 @@ import { PROFILE_DATA } from '../constants';
 
 export const About: React.FC = () => {
   return (
-    <section id="about" className="py-24 relative bg-beige-50 scroll-mt-32">
+    <section id="about" className="py-24 relative bg-beige-50 dark:bg-gray-950 scroll-mt-32 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-12 gap-12 items-start">
           
           <div className="md:col-span-4">
-            <h3 className="text-sm font-bold text-orange-600 tracking-wider uppercase mb-3">About Me</h3>
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Bridging Creativity & Artificial Intelligence</h2>
-             {/* Experience section removed */}
+            <h3 className="text-sm font-bold text-orange-600 dark:text-orange-400 tracking-wider uppercase mb-3">About Me</h3>
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Bridging Creativity & Artificial Intelligence</h2>
           </div>
 
           <div className="md:col-span-8 space-y-6">
-            <p className="text-lg text-gray-700 leading-relaxed font-light">
+            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed font-light">
               {PROFILE_DATA.professional_summary.portfolio_about_me}
             </p>
-            <p className="text-lg text-gray-600 leading-relaxed font-light">
+            <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed font-light">
                 Background in animation provides strong visual thinking, creativity, and rapid experimentation skills. I leverage tools like Gemini, Veo, and various LLMs to prototype fast and build functional MVPs.
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6">
-                {/* Certifications - First Item (Left Side) & Bolder Style */}
-                <div className="p-8 rounded-3xl bg-white border-2 border-beige-200 shadow-xl relative overflow-hidden">
-                    <h4 className="text-xl font-bold text-gray-900 mb-4">Certifications</h4>
+                {/* Certifications - First Item (Left Side) */}
+                <div className="p-8 rounded-3xl bg-white dark:bg-gray-900 border-2 border-beige-200 dark:border-gray-800 shadow-xl relative overflow-hidden transition-colors">
+                    <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Certifications</h4>
                     <ul className="space-y-3">
                         {PROFILE_DATA.certifications.map((c, index) => (
-                            <li key={index} className="text-base font-semibold text-gray-800 flex items-center gap-3">
+                            <li key={index} className="text-base font-semibold text-gray-800 dark:text-gray-200 flex items-center gap-3">
                                 <span className="w-2 h-2 bg-orange-500 rounded-full flex-shrink-0"></span>
                                 <a 
                                   href={c.link} 
                                   target="_blank" 
                                   rel="noopener noreferrer" 
-                                  className="hover:text-orange-600 hover:underline transition-colors"
+                                  className="hover:text-orange-600 dark:hover:text-orange-400 hover:underline transition-colors"
                                 >
                                   {c.name}
                                 </a>
@@ -44,10 +43,10 @@ export const About: React.FC = () => {
 
                 {/* Education - Second Item (Right Side) */}
                 {PROFILE_DATA.education.highest_qualification && (
-                    <div className="p-6 rounded-3xl bg-beige-100 border border-beige-200 flex flex-col justify-center">
-                        <h4 className="text-gray-900 font-semibold mb-2">Education</h4>
-                        <p className="text-lg text-gray-800 font-medium">{PROFILE_DATA.education.highest_qualification}</p>
-                        <p className="text-sm text-gray-500 mt-1">{PROFILE_DATA.education.details}</p>
+                    <div className="p-6 rounded-3xl bg-beige-100 dark:bg-gray-800/50 border border-beige-200 dark:border-gray-800 flex flex-col justify-center transition-colors">
+                        <h4 className="text-gray-900 dark:text-white font-semibold mb-2">Education</h4>
+                        <p className="text-lg text-gray-800 dark:text-gray-200 font-medium">{PROFILE_DATA.education.highest_qualification}</p>
+                        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{PROFILE_DATA.education.details}</p>
                     </div>
                 )}
             </div>

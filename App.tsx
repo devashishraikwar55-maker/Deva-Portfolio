@@ -9,12 +9,25 @@ import { Contact } from './components/Contact';
 import { GenerativeAICta } from './components/GenerativeAICta';
 import { GenerativeAIPage } from './components/GenerativeAIPage';
 import { IntroOverlay } from './components/IntroOverlay';
+import { ThemeToggle } from './components/ThemeToggle';
 
 type View = 'home' | 'generative-ai';
 
 function App() {
   const [currentView, setCurrentView] = useState<View>('home');
   const [showIntro, setShowIntro] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Initialize theme based on preference or system
+  useEffect(() => {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setIsDarkMode(true);
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
 
   // Prevent body scroll when intro is visible
   useEffect(() => {
@@ -23,22 +36,21 @@ function App() {
     } else {
       document.body.style.overflow = 'auto';
     }
-    return () => {
-      document.body.style.overflow = 'auto';
-    };
   }, [showIntro]);
 
   return (
-    <>
+    <div className={isDarkMode ? 'dark' : ''}>
       {showIntro && <IntroOverlay onComplete={() => setShowIntro(false)} />}
       
+      <ThemeToggle isDark={isDarkMode} toggleTheme={toggleTheme} />
+
       {currentView === 'generative-ai' ? (
-        <div className="min-h-screen bg-transparent text-gray-900 selection:bg-orange-200 selection:text-orange-900 overflow-x-hidden">
+        <div className="min-h-screen bg-beige-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 selection:bg-orange-200 selection:text-orange-900 overflow-x-hidden transition-colors duration-300">
           <GridBackground imageUrl="https://i.ibb.co/gpgPKHn/Gemini-Generated-Image-oxk07joxk07joxk0-1.png" />
           <GenerativeAIPage onBack={() => setCurrentView('home')} />
         </div>
       ) : (
-        <div className="min-h-screen bg-beige-50 text-gray-900 selection:bg-orange-200 selection:text-orange-900 overflow-x-hidden">
+        <div className="min-h-screen bg-beige-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 selection:bg-orange-200 selection:text-orange-900 overflow-x-hidden transition-colors duration-300">
           <GridBackground />
           <Navbar onNavigateToGenAI={() => setCurrentView('generative-ai')} />
           
@@ -52,7 +64,7 @@ function App() {
           </main>
         </div>
       )}
-    </>
+    </div>
   );
 }
 
