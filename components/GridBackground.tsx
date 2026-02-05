@@ -1,6 +1,12 @@
 import React from 'react';
 
-export const GridBackground: React.FC = () => {
+interface GridBackgroundProps {
+  imageUrl?: string;
+}
+
+export const GridBackground: React.FC<GridBackgroundProps> = ({ imageUrl }) => {
+  const bgImage = imageUrl || "https://i.ibb.co/Hfr3BPv4/Gemini-Generated-Image-cdbo26cdbo26cdbo.png";
+
   return (
     <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none bg-[#FFFAF5]">
       
@@ -8,7 +14,7 @@ export const GridBackground: React.FC = () => {
       <div 
         className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
         style={{ 
-          backgroundImage: 'url("https://i.ibb.co/Hfr3BPv4/Gemini-Generated-Image-cdbo26cdbo26cdbo.png")'
+          backgroundImage: `url("${bgImage}")`
         }} 
       >
       </div>

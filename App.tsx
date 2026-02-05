@@ -33,8 +33,8 @@ function App() {
       {showIntro && <IntroOverlay onComplete={() => setShowIntro(false)} />}
       
       {currentView === 'generative-ai' ? (
-        <div className="min-h-screen bg-white text-gray-900 selection:bg-orange-200 selection:text-orange-900 overflow-x-hidden">
-          <GridBackground />
+        <div className="min-h-screen bg-transparent text-gray-900 selection:bg-orange-200 selection:text-orange-900 overflow-x-hidden">
+          <GridBackground imageUrl="https://i.ibb.co/gpgPKHn/Gemini-Generated-Image-oxk07joxk07joxk0-1.png" />
           <GenerativeAIPage onBack={() => setCurrentView('home')} />
         </div>
       ) : (

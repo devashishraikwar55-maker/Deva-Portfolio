@@ -8,17 +8,20 @@ export const Hero: React.FC = () => {
       
       {/* 
         MAIN TYPOGRAPHY & INTRO 
-        Centered, large, bold.
       */}
-      <div className="relative z-10 w-full max-w-5xl mx-auto text-center space-y-8 animate-fade-in-up mb-8">
+      <div className="relative z-10 w-full max-w-7xl mx-auto space-y-8 animate-fade-in-up mb-8">
         
-        <div className="space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-100/50 border border-orange-200 backdrop-blur-sm text-orange-800 text-sm font-medium mb-4">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
-            </span>
-            Available for new projects
+        <div className="text-center space-y-4 max-w-5xl mx-auto">
+          
+          {/* Badge - Centered & Smaller */}
+          <div className="flex justify-center">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-100/50 border border-orange-200 backdrop-blur-sm text-orange-900 text-sm font-bold mb-2">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
+              </span>
+              Available for new projects
+            </div>
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 leading-[1.1]">
@@ -74,7 +77,7 @@ export const Hero: React.FC = () => {
 
         </div>
 
-        <div className="pt-6">
+        <div className="pt-6 text-center">
            <a href="#projects" className="inline-flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors animate-bounce">
               Scroll to explore <ArrowDown size={14} />
            </a>

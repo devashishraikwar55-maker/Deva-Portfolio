@@ -12,7 +12,7 @@ export const GenerativeAIPage: React.FC<Props> = ({ onBack }) => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-transparent">
       {/* Navigation Header */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 px-6 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -35,7 +35,7 @@ export const GenerativeAIPage: React.FC<Props> = ({ onBack }) => {
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Visual Synthesis</h1>
             <p className="text-xl text-gray-500 mb-12">Curated AI-generated imagery and video productions.</p>
             
-            <div className="p-12 border-2 border-dashed border-gray-200 rounded-3xl bg-gray-50">
+            <div className="p-12 border-2 border-dashed border-gray-200 rounded-3xl bg-white/50 backdrop-blur-sm">
                 <p className="text-gray-400 font-medium">Content will be added here based on further instructions.</p>
             </div>
         </div>

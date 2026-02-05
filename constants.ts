@@ -46,7 +46,8 @@ export const PROFILE_DATA: ProfileData = {
   tools_and_platforms: {
     ai_image_and_video: [
       "Nano Banana Pro",
-      "Veo 3.1"
+      "Veo 3.1",
+      "Grok"
     ],
     ai_development_and_prototyping: [
       "Gemini AI Studio",

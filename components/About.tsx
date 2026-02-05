@@ -8,7 +8,7 @@ export const About: React.FC = () => {
         <div className="grid md:grid-cols-12 gap-12 items-start">
           
           <div className="md:col-span-4">
-            <h3 className="text-sm font-semibold text-orange-600 tracking-wider uppercase mb-3">About Me</h3>
+            <h3 className="text-sm font-bold text-orange-600 tracking-wider uppercase mb-3">About Me</h3>
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Bridging Creativity & Artificial Intelligence</h2>
              {/* Experience section removed */}
           </div>
