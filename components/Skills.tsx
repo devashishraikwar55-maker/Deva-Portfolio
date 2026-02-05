@@ -9,10 +9,8 @@ const useOnScreen = (options: IntersectionObserverInit) => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setIsVisible(true);
-        observer.disconnect(); // Only animate once
-      }
+      // Toggle visibility based on intersection status to repeat animations
+      setIsVisible(entry.isIntersecting);
     }, options);
 
     if (ref.current) {

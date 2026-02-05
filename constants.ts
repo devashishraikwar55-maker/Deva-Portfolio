@@ -72,7 +72,7 @@ export const PROFILE_DATA: ProfileData = {
         "Social media automation",
         "Workflow optimization"
       ],
-      image_url: "https://i.ibb.co/c5Jcbyt/Screenshot-2026-02-05-163024.png",
+      image_url: "https://i.ibb.co/G3Q2kSWZ/Gemini-Generated-Image-sbwdzxsbwdzxsbwd.png",
       link: "https://ai.studio/apps/drive/1MRvDcARL58A0YDUFqGA1BYouj7WzuON_"
     },
     {
@@ -84,7 +84,7 @@ export const PROFILE_DATA: ProfileData = {
         "User-friendly AI tools",
         "Prototype development"
       ],
-      image_url: "https://i.ibb.co/B5kF30WF/Screenshot-2026-02-05-162854.png",
+      image_url: "https://i.ibb.co/LzwFRYzg/Gemini-Generated-Image-ykhnzeykhnzeykhn.png",
       link: "https://speak-to-text-by-sitara.lovable.app/"
     },
     {
