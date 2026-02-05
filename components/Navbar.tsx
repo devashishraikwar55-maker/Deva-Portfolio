@@ -20,12 +20,30 @@ export const Navbar: React.FC = () => {
     { name: 'Contact', href: '#contact' },
   ];
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+    
+    // Remove the '#' to get the ID
+    const targetId = href.substring(1);
+    const element = document.getElementById(targetId);
+    
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+      // Fallback for updating URL without jumping
+      window.history.pushState(null, '', href);
+    }
+  };
+
   return (
     <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 flex justify-center pt-6 px-4`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 flex justify-center pt-6 px-4 pointer-events-none`}
     >
       <div className={`
-        flex items-center justify-between px-8 py-3 rounded-full transition-all duration-300 w-full max-w-7xl
+        relative flex items-center justify-between px-8 py-3 rounded-full transition-all duration-300 w-full max-w-7xl pointer-events-auto
         ${isScrolled ? 'bg-white/80 backdrop-blur-md shadow-sm border border-white/40 mt-2' : 'bg-transparent'}
       `}>
         
@@ -35,13 +53,14 @@ export const Navbar: React.FC = () => {
           DEVAA
         </div>
 
-        {/* Desktop Nav - Centered like Reference */}
+        {/* Desktop Nav - Centered */}
         <div className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
           {navLinks.map((link) => (
             <a 
               key={link.name} 
               href={link.href}
-              className={`text-sm font-medium transition-colors ${isScrolled ? 'text-gray-600 hover:text-gray-900' : 'text-gray-800/80 hover:text-gray-900'}`}
+              onClick={(e) => handleNavClick(e, link.href)}
+              className={`text-sm font-medium transition-colors cursor-pointer ${isScrolled ? 'text-gray-600 hover:text-gray-900' : 'text-gray-800/80 hover:text-gray-900'}`}
             >
               {link.name}
             </a>
@@ -51,7 +70,8 @@ export const Navbar: React.FC = () => {
         <div className="hidden md:block">
            <a 
             href="#contact"
-            className="px-6 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors shadow-lg shadow-gray-900/10"
+            onClick={(e) => handleNavClick(e, '#contact')}
+            className="px-6 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors shadow-lg shadow-gray-900/10 cursor-pointer"
           >
             Schedule a demo
           </a>
@@ -59,7 +79,7 @@ export const Navbar: React.FC = () => {
 
         {/* Mobile Toggle */}
         <div className="md:hidden">
-          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-gray-900 p-1">
+          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-gray-900 p-1 cursor-pointer">
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -67,13 +87,13 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="absolute top-24 left-4 right-4 bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col gap-4 animate-fade-in-up z-50">
+        <div className="absolute top-24 left-4 right-4 bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col gap-4 animate-fade-in-up z-50 pointer-events-auto">
            {navLinks.map((link) => (
             <a 
               key={link.name} 
               href={link.href}
               className="text-lg font-medium text-gray-700 hover:text-gray-900"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => handleNavClick(e, link.href)}
             >
               {link.name}
             </a>
@@ -81,7 +101,7 @@ export const Navbar: React.FC = () => {
           <a 
             href="#contact"
             className="mt-2 text-center px-5 py-3 bg-gray-900 text-white text-sm font-medium rounded-xl"
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={(e) => handleNavClick(e, '#contact')}
           >
             Get in touch
           </a>

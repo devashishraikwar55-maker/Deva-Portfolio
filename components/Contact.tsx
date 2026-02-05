@@ -4,7 +4,7 @@ import { Mail, Phone, Linkedin, Twitter } from 'lucide-react';
 
 export const Contact: React.FC = () => {
   return (
-    <section id="contact" className="py-24 relative bg-[#FAFAFA] border-t border-gray-200">
+    <section id="contact" className="py-24 relative bg-[#FAFAFA] border-t border-gray-200 scroll-mt-32">
       <div className="max-w-7xl mx-auto px-6 text-center">
         
         <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">Ready to collaborate?</h2>

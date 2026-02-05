@@ -3,7 +3,7 @@ import { PROFILE_DATA } from '../constants';
 
 export const About: React.FC = () => {
   return (
-    <section id="about" className="py-24 relative bg-white">
+    <section id="about" className="py-24 relative bg-white scroll-mt-32">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-12 gap-12 items-start">
           

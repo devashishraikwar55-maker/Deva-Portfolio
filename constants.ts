@@ -65,7 +65,7 @@ export const PROFILE_DATA: ProfileData = {
   projects: [
     {
       project_title: "Auto Caption and Hashtag Generator",
-      project_type: "AI Integrated MVP",
+      project_type: "AI Integrated Tool",
       description: "Developed an AI-based tool that analyzes images and automatically generates relevant social media captions and hashtags to improve content creation speed and engagement.",
       focus_areas: [
         "AI image analysis",
@@ -86,6 +86,18 @@ export const PROFILE_DATA: ProfileData = {
       ],
       image_url: "https://i.ibb.co/B5kF30WF/Screenshot-2026-02-05-162854.png",
       link: "https://speak-to-text-by-sitara.lovable.app/"
+    },
+    {
+      project_title: "Dry House",
+      project_type: "Website",
+      description: "A fully responsive e-commerce store for premium dry fruits. Features a clean, modern interface for browsing products and a streamlined user experience.",
+      focus_areas: [
+        "E-commerce",
+        "Web Design",
+        "Frontend Development"
+      ],
+      image_url: "https://i.ibb.co/gpkXFtr/logo-1.png",
+      link: "https://dryhouse.netlify.app/"
     }
   ],
   education: {
